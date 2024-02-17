@@ -1,0 +1,585 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800&family=Roboto:wght@100;300;400&display=swap');
+
+/* ESTILO GERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: white;
+    height: 100vh;
+    font-family: 'Outfit', Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    padding-top: 70px;
+}
+
+.interface {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+}
+
+.btn-contato button {
+    padding: 10px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #7fe1e1;
+    border: 0;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+h2.titulo {
+    color: black;
+    font-size: 33px;
+    text-align: center;
+}
+
+button:hover,
+form .btn-enviar input:hover {
+    box-shadow: 0px 0px 8px #7fe1e1;
+    transform: scale(1.07);
+}
+
+/* ESTILO DO CABEÇALHO */
+header {
+    padding: 16px 10%;
+    box-shadow: 0 4px 17px rgba(0, 0, 0, .1);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    transition: .3s;
+}
+
+header>.interface {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    opacity: 0;
+    animation: leftSideAni 1s ease forwards;
+    animation-delay: .8s;
+}
+
+header .logo a {
+    color: black;
+    text-decoration: none;
+}
+
+header a {
+    color: black;
+    text-decoration: none;
+    display: inline-block;
+    transition: .2s;
+}
+
+.menu-desktop a:hover {
+    color: #7fe1e1;
+    transform: scale(1.07);
+}
+
+.menu-desktop ul {
+    list-style-type: none;
+    font-weight: 500;
+}
+
+.menu-desktop ul li {
+    display: inline-block;
+    padding: 0 20px;
+}
+
+/* ESTILO DO MENU MOBILE */
+.btn-abrir-menu{
+    display: none;
+    font-size: 40px;
+}
+
+.btn-abrir-menu i {
+    color: #7fe1e1;
+}
+
+.menu-mobile {
+    background-color: white;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 99999;
+    width: 0%;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.menu-mobile.abrir-menu{
+    width: 70%;
+}
+
+.menu-mobile.abrir-menu ~ .overlay-menu {
+    display: block;
+}
+
+.menu-mobile .btn-fechar{
+    padding: 20px 5%;
+}
+
+.menu-mobile .btn-fechar i {
+    color: #7fe1e1;
+    font-size: 50px;
+}
+
+.menu-mobile nav ul {
+    text-align: right;
+    list-style-type: none;
+}
+
+.menu-mobile nav ul li a {
+    color: black;
+    font-size: 30px;
+    font-weight: 300;
+    padding: 20px 8%;
+    display: block;
+}
+
+.menu-mobile nav ul li a:hover {
+    background-color: #7fe1e1;
+    color: white;
+}
+
+.overlay-menu {
+    background-color: rgba(0, 0, 0, 0.363);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 88888;
+    display: none;
+}
+
+/* ESTILO DO INÍCIO */
+section.inicio {
+    padding: 100px 10%;
+}
+
+section.inicio .flex {
+    align-items: center;
+    gap: 140px;
+}
+
+.inicio .img-inicio {
+    border-radius: 10px;
+    width: 450px;
+    background: linear-gradient(145deg, #e2e8ec, #ffffff);
+    box-shadow: 5px 5px 15px #D1D9E6, -5px -5px 15px #ffffff;
+    border-top: 2px solid #7fe1e1;
+    opacity: 0;
+    animation: imageAni 1s ease forwards;
+    animation-delay: .8s;
+}
+
+.inicio .txt-inicio {
+    color: black;
+}
+
+.inicio .txt-inicio h3 {
+    font-size: 25px;
+    line-height: 40px;
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: topSideAni 1s ease forwards;
+    animation-delay: .8s;
+}
+
+.inicio .txt-inicio h1 {
+    font-size: 64px;
+    line-height: 40px;
+    font-weight: 600;
+    margin-bottom: 17px;
+    opacity: 0;
+    animation: leftSideAni 1s ease forwards;
+    animation-delay: 1.5s;
+}
+
+.inicio .txt-inicio p {
+    margin: 20px 0;
+    text-align: justify;
+}
+
+.btn-social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22.4px;
+    margin-top: 22.4px;
+}
+
+.btn-social a {
+    display: grid;
+    place-items: center;
+    text-decoration: none;
+    color: #7fe1e1;
+    border: 1.6px solid #7fe1e1;
+    font-size: 24px;
+    border-radius: 50%;
+    padding: 6.24px;
+    text-align: center;
+    opacity: 0;
+    animation: SocialAni 1s ease forwards;
+    animation-delay: calc(.6s * var(--socialAni));
+}
+
+.btn-social a:hover {
+    color: #000;
+    background-color: #7fe1e1;
+    box-shadow: 0 0 20px #7fe1e1;
+    transition: all .3s ease-in-out;
+}
+
+/* ESTILO DOS CURSOS */
+section.cursos {
+    padding: 100px 10%;
+}
+
+section.cursos .flex {
+    gap: 60px;
+}
+
+.cursos .cursos-box {
+    flex: 1;
+    color: black;
+    padding: 55px;
+    border-radius: 20px;
+    margin-top: 45px;
+    transition: .3s;
+}
+
+.cursos .cursos-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #00000070;
+}
+
+.cursos .cursos-box h3 {
+    text-align: center;
+    font-size: 25px;
+    margin: 15px 0;
+}
+
+.cursos .cursos-box p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* ESTILO DO SOBRE */
+.sobre {
+    padding: 170px 10%;
+    background: linear-gradient(white , #7fe1e1 85%, white);
+}
+
+.sobre h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    line-height: 40px;
+    text-indent: 20px;
+}
+
+.sobre .flex {
+    flex-direction: column;
+}
+
+.sobre p {
+    font-size: 20px;
+    text-indent: 20px;
+    line-height: 30px;
+}
+
+/* ESTILO DOS MEUS PROJETOS */
+section.portfolio {
+    padding: 100px 10%;
+    gap: 60px;
+}
+
+.portfolio .flex {
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.img-port {
+    width: 360px;
+    height: 460px;
+    background-size: cover;
+    background-position: 100% 0%;
+    transition: 8s;
+    cursor: pointer;
+    border-radius: 40px;
+    position: relative;
+}
+
+.img-port:hover {
+    background-position: 100% 100%;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000b8;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: black;
+    opacity: 0;
+    transition: .5s;
+}
+
+.overlay:hover {
+    opacity: 1;
+}
+
+/* ESTILO DO FORMULÁRIO DE CONTATO */
+section.formulario {
+    padding: 80px 10%;
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 40px;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    background-color: #242424;
+    border: 0;
+    outline: 0;
+    padding: 20px 15px;
+    border-radius: 15px;
+    color: white;
+    font-size: 18px;
+}
+
+form textarea {
+    resize: none;
+    max-height: 200px;
+}
+
+form .btn-enviar {
+    margin-top: 20px;
+    text-align: center;
+}
+
+form .btn-enviar input {
+    width: 120px;
+    background-color: #7fe1e1;
+    color: #000;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .2s;
+}
+
+/* ESTILO DO RODAPÉ */
+footer {
+    padding: 20px 4%;
+    box-shadow: 0 0 40px 10px #7fe1e181;
+}
+
+footer .flex {
+    justify-content: space-between;
+}
+
+footer .line-footer {
+    padding: 20px 0;
+}
+
+.line-footer .btn-social a{
+    font-size: 38px;
+}
+
+.borda {
+    border-top: 2px solid #7fe1e1;
+}
+
+footer .line-footer p i {
+    color: #7fe1e1;
+    font-size: 22px;
+}
+
+footer .line-footer p a {
+    color: black;
+    text-decoration: none;
+}
+
+
+
+@media screen and (max-width: 1020px){
+    /* CLASSES GERAIS */
+    .flex {
+        flex-direction: column;
+    }
+
+    h2.titulo {
+        line-height: 30px;
+    }
+
+    /* CABEÇALHO */
+    .btn-abrir-menu{
+        display: block;
+    }
+
+    .menu-desktop, .btn-contato{
+        display: none;
+    }
+
+    /* INÍCIO */
+    section.inicio {
+        padding: 55px 10%;
+    }
+
+    .inicio .img-inicio {
+        width: 100%;
+    }
+
+    .inicio .img-inicio img {
+        width: 100%;
+    }
+
+    section.inicio .flex {
+        gap: 55px;
+    }
+
+    .inicio .txt-inicio h1 {
+        line-height: 50px;
+    }
+
+    /* CURSOS */
+    section.cursos .flex {
+        gap: 1px;
+    }
+
+    /* SOBRE */
+    .sobre {
+        padding: 60px 10%;
+    }
+
+    .sobre h2 {
+        text-align: center;
+        text-indent: 0%;
+        font-size: 34px;
+    }
+
+    .cursos .cursos-box {
+        box-shadow: 0 0 20px #00000070;
+    }
+
+    /* PROJETOS */
+    .img-port {
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto;
+    }
+
+    /* RODAPÉ */
+    footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    footer .interface {
+        text-align: center;
+    }
+
+    .line-footer {
+        margin-bottom: 10px;
+    }
+
+    .line-footer.flex {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo-footer {
+        margin-right: 20px;
+    }
+
+    .btn-social.rodape a {
+        margin: 0 10px;
+    }
+}
+
+/* ANIMAÇÕES */
+@keyframes leftSideAni {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes topSideAni {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes SocialAni {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes imageAni {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

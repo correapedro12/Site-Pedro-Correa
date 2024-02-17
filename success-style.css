@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800&family=Roboto:wght@100;300;400&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: black;
+    font: 400 1rem 'Outfit', sans-serif;
+}
+
+#app {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    padding: 40px;
+    background: linear-gradient(338deg, #c4f0f0 35%, #7fe1e1 35%, #7fe1e1 65%, #c4f0f0 65%);
+}
+
+main {
+    display: flex;
+    background: white;
+    box-shadow: 3px 3px 25px 6px rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+}
+
+.success {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    max-width: 600px;
+    width: 100%;
+    max-height: 600px;
+    height: auto;
+    margin: auto;
+}
+
+.success video {
+    max-width: 100%;
+    height: auto;
+    max-height: 250px;
+    width: auto;
+}
+
+
+.success h1 {
+    text-align: center;
+    font-size: 30px;
+    line-height: 48px;
+    height: 0;
+    overflow: hidden;
+    animation: animationText 1s forwards;
+    animation-delay: 2s;
+}
+
+.success h2 {
+    text-align: center;
+    font-size: 20px;
+    line-height: 38px;
+    height: 0;
+    overflow: hidden;
+    animation: animationText 1s forwards;
+    animation-delay: 2s;
+}
+
+@keyframes animationText {
+    0%{
+        height: 0;
+    }
+
+    100% {
+        height: 56px;
+        margin-bottom: 0px;
+    }
+}
+
+.footer-text {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 15px;
+    color: black;
+    cursor: default;
+}
+
+@media screen and (max-width: 1020px){
+    .success h1 {
+        font-size: 25px;
+        line-height: 20px;
+    }
+    
+    .success h2 {
+        font-size: 18px;
+        line-height: 17px;
+    }
+}
