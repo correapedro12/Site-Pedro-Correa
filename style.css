@@ -55,6 +55,18 @@ form .btn-enviar input:hover {
     transform: scale(1.07);
 }
 
+::-webkit-scrollbar {
+    width: 12px;
+    background-color: rgb(200, 200, 200);
+    border: 5px solid white;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #7fe1e1;
+    border-radius: 50px;
+    border: 2px solid white;
+}
+
 /* ESTILO DO CABEÇALHO */
 header {
     padding: 16px 10%;
